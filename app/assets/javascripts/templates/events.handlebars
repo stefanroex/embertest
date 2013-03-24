@@ -1,0 +1,25 @@
+<h3>Events</h3>
+
+{{#if Embertest.filters.search}}
+  Zoekterm: <strong>{{Embertest.filters.search}}</strong>
+  <br/><br/>
+{{/if}}
+
+{{#if content.isLoaded}}
+  {{#each controller}}
+    {{#if view.showName}}
+      <strong>{{client.fullName}}</strong><br/>
+    {{/if}}
+    {{message}}<br/>
+    <small>
+      {{typeName}} {{dateFormat createdAt}}
+      <span class="btn btn-danger btn-mini" {{action deleteEvent this}}>Delete</span><br/><br/>
+    </small>
+    <hr/>
+  {{else}}
+    Geen events gevonden...
+  {{/each}}
+  {{view Embertest.MoreButtonView}}
+{{else}}
+  Loading...
+{{/if}}

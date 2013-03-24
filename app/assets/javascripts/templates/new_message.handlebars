@@ -1,0 +1,12 @@
+New message for <strong>{{controller.fullName}}</strong>
+{{view Ember.TextArea valueBinding="view.message"}}
+
+{{view Ember.Select
+       contentBinding="view.selectableMessageTypes"
+       optionValuePath="content.id"
+       optionLabelPath="content.name"
+       selectionBinding="view.typeId"}}
+
+<br/>
+
+<input type="submit" value="Add message" class="btn btn-primary">

@@ -1,0 +1,15 @@
+{{render clients}}
+
+<div class="container">
+  <div class="row">
+    <div class="span4">
+      <ul class="nav nav-tabs nav-stacked">
+        {{each messageTypes itemViewClass="Embertest.MessageTypeView"}}
+      </ul>
+      {{outlet 'messageOutlet'}}
+    </div>
+    <div class="span8">
+      {{outlet}}
+    </div>
+  </div>
+</div>
