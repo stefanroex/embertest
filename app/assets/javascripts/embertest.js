@@ -1,1 +1,0 @@
-Embertest = Ember.Application.create();

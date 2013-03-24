@@ -1,0 +1,1 @@
+@Embertest = Ember.Application.create()

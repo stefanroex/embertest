@@ -2,14 +2,12 @@ Embertest.Router.map ->
   @resource 'client', path: 'client/:client_id'
 
 Embertest.ApplicationRoute = Ember.Route.extend
-  init: ->
+  setupController: (controller, model) ->
+    @controllerFor('clients').set('content', Embertest.Client.find())
     Embertest.filters = Embertest.Filters.create()
     Embertest.filters.on 'didChange', =>
       filters = Embertest.filters.toParams()
       @controllerFor('events').set('content', Embertest.Event.find(filters))
-
-  setupController: (controller, model) ->
-    @controllerFor('clients').set('content', Embertest.Client.find())
 
   events:
     filterType: (typeId) ->
