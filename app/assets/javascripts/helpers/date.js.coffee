@@ -1,2 +1,2 @@
 Handlebars.registerHelper 'dateFormat', (context, block) ->
-  moment(Date(context)).format('LL')
+  moment(Date(context)).format('L')

@@ -8,8 +8,6 @@ gem 'ember-rails'
 gem 'active_model_serializers'
 gem 'strong_parameters'
 gem 'ransack'
-gem 'bootstrap-wysihtml5-rails'
-gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
 gem 'will_paginate'
 
 group :assets do
@@ -17,4 +15,6 @@ group :assets do
   gem 'coffee-rails', '~> 3.2.1'
   gem 'uglifier', '>= 1.0.3'
   gem 'momentjs-rails'
+  gem 'bootstrap-wysihtml5-rails'
+  gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
 end
