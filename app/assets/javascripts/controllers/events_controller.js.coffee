@@ -27,13 +27,8 @@ Embertest.EventsController = Ember.ArrayController.extend
     @setProperties(clientId: clientId, search: null, typeId: null)
 
   triggerChange: (->
-    filters =
+    @set 'content', Embertest.Event.find
       client_id_eq: @get('clientId')
       type_id_eq: @get('typeId')
       message_cont: @get('search')
-
-    for i of filters
-      delete filters[i] unless filters[i]?
-
-    @set('content', Embertest.Event.find(filters))
   ).observes('clientId', 'search', 'typeId')

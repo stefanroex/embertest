@@ -5,10 +5,6 @@ Embertest.ApplicationRoute = Ember.Route.extend
   setupController: (controller, model) ->
     @controllerFor('clients').set('content', Embertest.Client.find())
 
-  events:
-    filterType: (typeId) ->
-      @controllerFor('events').set('typeId', typeId)
-
 Embertest.IndexRoute = Ember.Route.extend
   setupController: (controller, model) ->
     @controllerFor('events').resetWithClientId(null)

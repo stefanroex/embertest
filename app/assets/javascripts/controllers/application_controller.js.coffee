@@ -3,3 +3,6 @@ Embertest.ApplicationController = Ember.Controller.extend
   currentMessageTypeBinding: 'controllers.events.typeId'
   searchBinding: 'controllers.events.search'
   messageTypesBinding: "Embertest.MESSAGE_TYPES"
+
+  setMessageType: (typeId) ->
+    @set('currentMessageType', typeId)
