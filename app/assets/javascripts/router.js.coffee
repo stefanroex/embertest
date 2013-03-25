@@ -4,22 +4,18 @@ Embertest.Router.map ->
 Embertest.ApplicationRoute = Ember.Route.extend
   setupController: (controller, model) ->
     @controllerFor('clients').set('content', Embertest.Client.find())
-    Embertest.filters = Embertest.Filters.create()
-    Embertest.filters.on 'didChange', =>
-      filters = Embertest.filters.toParams()
-      @controllerFor('events').set('content', Embertest.Event.find(filters))
 
   events:
     filterType: (typeId) ->
-      Embertest.filters.set('typeId', typeId)
+      @controllerFor('events').set('typeId', typeId)
 
 Embertest.IndexRoute = Ember.Route.extend
   setupController: (controller, model) ->
-    Embertest.filters.resetWithClientId(null)
+    @controllerFor('events').resetWithClientId(null)
 
 Embertest.ClientRoute = Ember.Route.extend
   setupController: (controller, model) ->
-    Embertest.filters.resetWithClientId(model.get('id'))
+    @controllerFor('events').resetWithClientId(model.get('id'))
 
   renderTemplate: ->
     @_super()

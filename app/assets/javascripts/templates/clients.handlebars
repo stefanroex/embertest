@@ -1,23 +1,6 @@
-<div class="navbar navbar-inverse navbar-fixed-top">
-  <div class="navbar-inner">
-    <div class="container">
-      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="brand" href="#">Dotto on Ember</a>
-      <div class="nav-collapse collapse">
-        <ul class="nav">
-          <li>{{#linkTo 'index'}}Alles{{/linkTo}}</li>
-          {{#each client in controller}}
-          <li>{{#linkTo 'client' client}}{{client.fullName}}{{/linkTo}}</li>
-          {{/each}}
-        </ul>
-      </div>
-      <div class="navbar-search pull-right">
-        {{template search}}
-      </div>
-    </div>
-  </div>
-</div>
+<ul class="nav">
+  <li>{{#linkTo 'index'}}Alles{{/linkTo}}</li>
+  {{#each client in controller}}
+  <li>{{#linkTo 'client' client}}{{client.fullName}}{{/linkTo}}</li>
+  {{/each}}
+</ul>
