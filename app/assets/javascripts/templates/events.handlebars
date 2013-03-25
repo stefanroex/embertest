@@ -6,16 +6,25 @@
 {{/if}}
 
 {{#if content.isLoaded}}
-  {{#each controller}}
-    {{#if view.showName}}
-      <strong>{{client.fullName}}</strong><br/>
+  {{#each controller itemController="event"}}
+    {{#if isEditing}}
+      {{view Ember.TextArea valueBinding="message"}}
+      <br/>
+      <button class="btn btn-primary" {{action updateEvent}}>Save</button>
+      <button class="btn" {{action cancelEditing}}>Canel</button>
+      <hr/>
+    {{else}}
+      {{#if view.showName}}
+        <strong>{{client.fullName}}</strong><br/>
+      {{/if}}
+      {{message}}<br/>
+      <small>
+        {{typeName}} {{dateFormat createdAt}}
+        <span class="btn btn-primary btn-mini" {{action editEvent}}>Edit</span>
+        <span class="btn btn-danger btn-mini" {{action deleteEvent this}}>Delete</span>
+      </small>
+      <hr/>
     {{/if}}
-    {{message}}<br/>
-    <small>
-      {{typeName}} {{dateFormat createdAt}}
-      <span class="btn btn-danger btn-mini" {{action deleteEvent this}}>Delete</span>
-    </small>
-    <hr/>
   {{else}}
     Geen events gevonden...
   {{/each}}

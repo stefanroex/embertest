@@ -14,6 +14,10 @@ class EventsController < ApplicationController
     render json: Event.create(params[:event])
   end
 
+  def update
+    render json: Event.update(params[:id], params[:event])
+  end
+
   def destroy
     render json: Event.destroy(params[:id])
   end
