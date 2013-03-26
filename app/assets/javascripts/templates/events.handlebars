@@ -13,11 +13,11 @@
       <hr/>
     {{else}}
       {{#if view.showName}}
-        <strong>{{client.fullName}}</strong><br/>
+        <strong>{{unbound client.fullName}}</strong><br/>
       {{/if}}
-      {{message}}<br/>
+      {{unbound message}}<br/>
       <small>
-        {{typeName}} {{dateFormat createdAt}}
+        {{unbound typeName}} {{unbound dateFormat createdAt}}
         <span class="btn btn-primary btn-mini" {{action editEvent}}>Edit</span>
         <span class="btn btn-danger btn-mini" {{action deleteEvent this}}>Delete</span>
       </small>

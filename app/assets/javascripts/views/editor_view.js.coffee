@@ -5,6 +5,7 @@ Embertest.EditorView = Ember.TextArea.extend
       "font-styles": false
       "events":
         "change": =>
+            console.log "change"
             value = @$().val()
             @set('value', value)
 
