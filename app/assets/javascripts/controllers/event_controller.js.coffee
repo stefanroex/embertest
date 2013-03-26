@@ -1,4 +1,8 @@
 Embertest.EventController = Ember.ObjectController.extend
+  message: (->
+    @get('content.message').htmlSafe()
+  ).property('content.message')
+
   editEvent: ->
     @transaction = @get('store').transaction()
     @transaction.add(@get('content'))

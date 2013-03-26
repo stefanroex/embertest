@@ -1,5 +1,3 @@
-<h3>Events</h3>
-
 {{#if search}}
   Zoekterm: <strong>{{search}}</strong>
   <br/><br/>
@@ -8,7 +6,7 @@
 {{#if content.isLoaded}}
   {{#each controller itemController="event"}}
     {{#if isEditing}}
-      {{view Ember.TextArea valueBinding="message"}}
+      {{view Embertest.EditorView valueBinding="message"}}
       <br/>
       <button class="btn btn-primary" {{action updateEvent}}>Save</button>
       <button class="btn" {{action cancelEditing}}>Canel</button>

@@ -14,6 +14,3 @@ Embertest.NewMessageView = Ember.View.extend
   selectableMessageTypes: (->
     @get('messageTypes').slice(1, 100)
   ).property('messageTypes')
-
-  didInsertElement: ->
-    # @$("textarea").wysihtml5()

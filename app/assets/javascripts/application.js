@@ -11,6 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require twitter/bootstrap/transition
+//= require twitter/bootstrap/modal
 //= require twitter/bootstrap/button
 //= require bootstrap-wysihtml5
 //= require moment
