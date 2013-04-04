@@ -1,6 +1,6 @@
-<ul class="nav">
-  {{#linkTo 'index' tagName="li" href=false}}<a {{bindAttr href="view.href"}}>Alles</a>{{/linkTo}}
-  {{#each client in controller}}
-    {{#linkTo 'client' client tagName="li" href=false}}<a {{bindAttr href="view.href"}}>{{unbound client.fullName}}</a>{{/linkTo}}
+<ul class="nav main-menu">
+  <li>{{#linkTo 'index'}}Alles{{/linkTo}}</li>
+  {{#each controller}}
+    <li>{{#linkTo 'client' this}}{{fullName}}{{/linkTo}}</li>
   {{/each}}
 </ul>

@@ -34,4 +34,7 @@ Embertest::Application.configure do
 
   # Print deprecation notices to the stderr
   config.active_support.deprecation = :stderr
+
+  # Use dev assets for ember
+  config.ember.variant = :development
 end

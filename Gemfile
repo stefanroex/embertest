@@ -18,3 +18,12 @@ group :assets do
   gem 'bootstrap-wysihtml5-rails'
   gem 'anjlab-bootstrap-rails', '>= 2.3', :require => 'bootstrap-rails'
 end
+
+group :test, :development do
+  gem 'konacha'
+  gem 'rspec-rails'
+  gem 'capybara'
+  gem 'poltergeist'
+  gem 'database_cleaner'
+  gem 'launchy'
+end
